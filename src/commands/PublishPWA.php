@@ -1,6 +1,6 @@
 <?php
 
-namespace Ladumor\LaravelPwa\commands;
+namespace Kangpcode\LaravelPwa\commands;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Console\Command;
