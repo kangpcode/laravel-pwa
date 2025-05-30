@@ -1,6 +1,6 @@
 <?php
 
-namespace Ladumor\LaravelPwa;
+namespace Kangpcode\LaravelPwa;
 
 use Illuminate\Support\Facades\Facade;
 
