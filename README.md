@@ -1,9 +1,9 @@
-[![Latest Stable Version](https://poser.pugx.org/ladumor/laravel-pwa/v)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![Daily Downloads](https://poser.pugx.org/ladumor/laravel-pwa/d/daily)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![Monthly Downloads](https://poser.pugx.org/ladumor/laravel-pwa/d/monthly)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![Total Downloads](https://poser.pugx.org/ladumor/laravel-pwa/downloads)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![License](https://poser.pugx.org/ladumor/laravel-pwa/license)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![PHP Version Require](https://poser.pugx.org/ladumor/laravel-pwa/require/php)](https://packagist.org/packages/ladumor/laravel-pwa)
+[![Latest Stable Version](https://poser.pugx.org/kangpcode/laravel-pwa/v)](https://packagist.org/packages/ladumor/laravel-pwa)
+[![Daily Downloads](https://poser.pugx.org/kangpcode/laravel-pwa/d/daily)](https://packagist.org/packages/ladumor/laravel-pwa)
+[![Monthly Downloads](https://poser.pugx.org/kangpcode/laravel-pwa/d/monthly)](https://packagist.org/packages/ladumor/laravel-pwa)
+[![Total Downloads](https://poser.pugx.org/kangpcode/laravel-pwa/downloads)](https://packagist.org/packages/ladumor/laravel-pwa)
+[![License](https://poser.pugx.org/kangpcode/laravel-pwa/license)](https://packagist.org/packages/ladumor/laravel-pwa)
+[![PHP Version Require](https://poser.pugx.org/kangpcode/laravel-pwa/require/php)](https://packagist.org/packages/ladumor/laravel-pwa)
 
 # Laravel PWA
 ## You can follow this video tutorial as well for installation.
@@ -81,7 +81,7 @@ Also include the JS: (Add following code in root blade file in before close the 
 ### License
 The MIT License (MIT). Please see [License](LICENSE.md) File for more information   
 
-<a href="https://www.buymeacoffee.com/ladumor" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/kangpcode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Note
  PWA only works with https. so, you need to run either with  `php artisan serve` or create a virtual host with https.
