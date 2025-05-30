@@ -1,5 +1,5 @@
 {
-    "name": "ladumor/laravel-pwa",
+    "name": "kangpcode/laravel-pwa",
     "description": "this package used for the make pwa website.",
     "type": "library",
     "keywords": [
@@ -15,22 +15,22 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Shailesh Ladumor",
-            "email": "shaileshmladumor@gmail.com"
+            "name": "Dhafa Nazula Permadi",
+            "email": "dhafanp@pcode.my.id"
         }
     ],
     "autoload": {
         "psr-4": {
-          "Ladumor\\LaravelPwa\\": "src/"
+          "Kangpcode\\LaravelPwa\\": "src/"
         }
       },
     "extra": {
       "laravel": {
         "providers": [
-          "\\Ladumor\\LaravelPwa\\PWAServiceProvider"
+          "\\Kangpcode\\LaravelPwa\\PWAServiceProvider"
         ],
         "aliases": {
-          "LaravelPwa": "Ladumor\\LaravelPwa\\LaravelPwa"
+          "LaravelPwa": "Kangpcode\\LaravelPwa\\LaravelPwa"
         }
       }
     }
