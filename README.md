@@ -1,4 +1,4 @@
-# Laravel PWA oleh Dhafa
+# Laravel PWA oleh KangPcode (Dhafa Nazula P)
 
 ![Lisensi](https://img.shields.io/github/license/kangpcode/laravel-pwa)
 ![Versi Rilis](https://img.shields.io/github/v/release/kangpcode/laravel-pwa)
