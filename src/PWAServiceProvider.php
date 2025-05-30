@@ -1,9 +1,9 @@
 <?php
 
-namespace Ladumor\LaravelPwa;
+namespace Kangpcode\LaravelPwa;
 
 use Illuminate\Support\ServiceProvider;
-use Ladumor\LaravelPwa\commands\PublishPWA;
+use Kangpcode\LaravelPwa\commands\PublishPWA;
 
 class PWAServiceProvider extends ServiceProvider
 {
