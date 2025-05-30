@@ -38,7 +38,7 @@ composer require --dev kangpcode/laravel-pwa
 Jika Anda menggunakan Laravel versi lama, tambahkan provider ke dalam `config/app.php`:
 
 ```php
-Ladumor\LaravelPwa\PWAServiceProvider::class,
+kangpcode\LaravelPwa\PWAServiceProvider::class,
 ```
 
 ### Tambahkan Alias (Facade)
@@ -46,7 +46,7 @@ Ladumor\LaravelPwa\PWAServiceProvider::class,
 Tambahkan alias berikut ke bagian `aliases` di `config/app.php`:
 
 ```php
-'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
+'LaravelPwa' => \kangpcode\LaravelPwa\LaravelPwa::class,
 ```
 
 ### Publikasikan Asset
