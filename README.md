@@ -1,90 +1,140 @@
-[![Latest Stable Version](https://poser.pugx.org/kangpcode/laravel-pwa/v)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![Daily Downloads](https://poser.pugx.org/kangpcode/laravel-pwa/d/daily)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![Monthly Downloads](https://poser.pugx.org/kangpcode/laravel-pwa/d/monthly)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![Total Downloads](https://poser.pugx.org/kangpcode/laravel-pwa/downloads)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![License](https://poser.pugx.org/kangpcode/laravel-pwa/license)](https://packagist.org/packages/ladumor/laravel-pwa)
-[![PHP Version Require](https://poser.pugx.org/kangpcode/laravel-pwa/require/php)](https://packagist.org/packages/ladumor/laravel-pwa)
+# Laravel PWA oleh Dhafa
 
-# Laravel PWA
-## You can follow this video tutorial as well for installation.
+![Lisensi](https://img.shields.io/github/license/kangpcode/laravel-pwa)
+![Versi Rilis](https://img.shields.io/github/v/release/kangpcode/laravel-pwa)
+![Commit Terakhir](https://img.shields.io/github/last-commit/kangpcode/laravel-pwa)
+![Issues Terbuka](https://img.shields.io/github/issues/kangpcode/laravel-pwa)
+![Pull Requests](https://img.shields.io/github/issues-pr/kangpcode/laravel-pwa)
+![Pengamat Repo](https://img.shields.io/github/watchers/kangpcode/laravel-pwa?style=social)
+![Bintang](https://img.shields.io/github/stars/kangpcode/laravel-pwa?style=social)
+![Fork](https://img.shields.io/github/forks/kangpcode/laravel-pwa?style=social)
+
+Paket Laravel ini memungkinkan Anda untuk mengubah aplikasi web Anda menjadi **Progressive Web App (PWA)** dengan mudah.
+
+## 🔥 Tutorial Video
+
+📺 Ikuti tutorial pemasangan Laravel PWA berikut:
 
 [<img src="https://img.youtube.com/vi/9H-T81KQPyo/0.jpg" width="250">](https://youtu.be/9H-T81KQPyo)
 
-## Watch Other Lavavel tutorial here
-[<img src="https://img.youtube.com/vi/yMtsgBsqDQs/0.jpg" width="580">](https://www.youtube.com/channel/UCuCjzuwBqMqFdh0EU-UwQ-w?sub_confirmation=1))
+▶️ Tonton juga konten Laravel lainnya di YouTube:
+[<img src="https://img.youtube.com/vi/yMtsgBsqDQs/0.jpg" width="580">](https://www.youtube.com/@basecamp_tech?sub_confirmation=1)
 
-## Installation
+📸 Ikuti di Instagram: [@seehai.dhafa](https://instagram.com/seehai.dhafa)  
+📂 Sumber kode: [https://github.com/kangpcode/laravel-pwa](https://github.com/kangpcode/laravel-pwa)
 
-Install the package by the following command, (try without `--dev` if you want to install it on production environment)
+---
 
-    composer require --dev ladumor/laravel-pwa
+## 🚀 Instalasi
 
+Jalankan perintah berikut untuk menginstal paket (hilangkan `--dev` jika digunakan di production):
 
-## Add Provider
+```bash
+composer require --dev kangpcode/laravel-pwa
+```
 
-Add the provider to your `config/app.php` into `provider` section if using lower version of laravel,
+### Tambahkan Service Provider
 
-    Ladumor\LaravelPwa\PWAServiceProvider::class,
+Jika Anda menggunakan Laravel versi lama, tambahkan provider ke dalam `config/app.php`:
 
-## Add Facade
+```php
+Ladumor\LaravelPwa\PWAServiceProvider::class,
+```
 
-Add the Facade to your `config/app.php` into `aliases` section,
+### Tambahkan Alias (Facade)
 
-    'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
+Tambahkan alias berikut ke bagian `aliases` di `config/app.php`:
 
-## Publish the Assets
+```php
+'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
+```
 
-Run the following command to publish config file,
+### Publikasikan Asset
 
-    php artisan laravel-pwa:publish
+```bash
+php artisan laravel-pwa:publish
+```
 
-## Configure PWA
- Add following code in root blade file in header section.
+---
 
-    <!-- PWA  -->
-    <meta name="theme-color" content="#6777ef"/>
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+## ⚙️ Konfigurasi di Blade
 
-Add following code in root blade file in before close the body.
+### Tambahkan ke `<head>` file utama Anda:
 
-    <script src="{{ asset('/sw.js') }}"></script>
-    <script>
-       if ("serviceWorker" in navigator) {
-          // Register a service worker hosted at the root of the
-          // site using the default scope.
-          navigator.serviceWorker.register("/sw.js").then(
-          (registration) => {
-             console.log("Service worker registration succeeded:", registration);
-          },
-          (error) => {
-             console.error(`Service worker registration failed: ${error}`);
-          },
-        );
-      } else {
-         console.error("Service workers are not supported.");
-      }
-    </script>
+```blade
+<!-- PWA -->
+<meta name="theme-color" content="#6777ef"/>
+<link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+<link rel="manifest" href="{{ asset('/manifest.json') }}">
+```
 
-### Custom Install Button
-You can add custom install button in your blade file by using the following code.
+### Tambahkan sebelum `</body>`:
 
-    <!-- Add this inside <body> -->
-    <button id="pwa-install-btn" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 8px; z-index: 1000;">
-       Install App
-    </button>
+```blade
+<script src="{{ asset('/sw.js') }}"></script>
+<script>
+   if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").then(
+         registration => {
+            console.log("Pendaftaran service worker berhasil:", registration);
+         },
+         error => {
+            console.error("Pendaftaran service worker gagal:", error);
+         }
+      );
+   } else {
+      console.error("Service worker tidak didukung di browser ini.");
+   }
+</script>
+```
 
-Also include the JS: (Add following code in root blade file in before close the body.)
+---
 
-     <script src="{{ asset('pwa-install.js') }}"></script>
+## 🧩 Tombol Instalasi Manual
 
-### License
-The MIT License (MIT). Please see [License](LICENSE.md) File for more information   
+Anda dapat menambahkan tombol instalasi PWA seperti ini:
 
-<a href="https://www.buymeacoffee.com/kangpcode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+```blade
+<!-- Tambahkan di dalam <body> -->
+<button id="pwa-install-btn" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 8px; z-index: 1000;">
+   Install Aplikasi
+</button>
+```
 
-## Note
- PWA only works with https. so, you need to run either with  `php artisan serve` or create a virtual host with https.
- you can watch the video for how to create a virtual host with HTTPS
+Dan tambahkan juga file JS:
+
+```blade
+<script src="{{ asset('pwa-install.js') }}"></script>
+```
+
+---
+
+## 🛡️ Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE.md). Silakan gunakan dan kontribusikan sesuai kebutuhan.
+
+---
+
+## ⚠️ Catatan Penting
+
+PWA hanya berfungsi penuh di **HTTPS**. Jika Anda menggunakan `php artisan serve`, itu cukup untuk pengembangan lokal.  
+Untuk produksi, pastikan aplikasi Anda berjalan di domain dengan HTTPS.
+
+Tonton juga video cara membuat virtual host dengan HTTPS:
 
 [<img src="https://img.youtube.com/vi/D5IqDcHyXSQ/0.jpg" width="550">](https://youtu.be/D5IqDcHyXSQ)
+
+---
+
+☕ Dukung karya ini:
+
+<a href="https://www.buymeacoffee.com/kangpcode" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+</a>
+
+---
+
+🔗 **Dhafa | Laravel Dev & Creator**  
+GitHub: [@kangpcode](https://github.com/kangpcode)  
+Instagram: [@seehai.dhafa](https://instagram.com/seehai.dhafa)  
+YouTube: [@basecamp_tech](https://youtube.com/@basecamp_tech)
